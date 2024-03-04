@@ -20,3 +20,7 @@ int Matrix::GetCols() const {
 int Matrix::GetRows() const {
     return this->rows_;
 }
+
+bool Matrix::CheckRowsCols() const {
+    return (rows_ < 0 || cols_ < 0);
+}

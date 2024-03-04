@@ -51,6 +51,7 @@ public:
     void Print();
     int GetCols() const;
     int GetRows() const;
+    bool CheckRowsCols() const;
 
     std::vector<double>& operator [](int i) {
         return matrix_[i];
@@ -58,14 +59,13 @@ public:
 
     double& operator ()(int i, int j){
         if ((i < 1 || i > rows_) || (j < 1 || j > cols_))
-            throw std::invalid_argument("EXCEPTION: Out of bound!\n");
+            throw std::invalid_argument("Out of bound!\n");
         return matrix_[i][j];
     }
 
     Matrix& operator = (const Matrix& other){
         if (rows_ != other.rows_ || cols_ != other.cols_)
             throw std::invalid_argument("Rows or cols of the matrices don't match!\n");
-
         for (int i = 0; i < other.GetRows(); ++i) {
             for (int j = 0; j < other.GetCols(); ++j) {
                 matrix_[i][j] = other.matrix_[i][j];
@@ -100,7 +100,7 @@ public:
         return *this;
     }
 
-    Matrix& operator *= (const double num) {
+    Matrix& operator *= (double num) {
         this->MulNumber(num);
         return *this;
     }
