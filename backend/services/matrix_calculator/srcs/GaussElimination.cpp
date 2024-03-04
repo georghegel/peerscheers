@@ -9,14 +9,14 @@ int find_non_zero_diagonal_element(int start, Matrix& matrix){
     return answer;
 }
 
-void elimination_processor(double *ratio, Matrix& row_echelon, int i, int j, int dimension, bool for_inverse){
-    dimension = for_inverse ? dimension * 2 : dimension;
+void elimination_processor(double *ratio, Matrix& row_echelon, int i, int j, int dimension, bool rectangular){
+    dimension = rectangular ? dimension * 2 : dimension;
     *ratio = row_echelon[j][i] / row_echelon[i][i];
     for (int k = 0; k < dimension; ++k)
         row_echelon[j][k] = row_echelon[j][k] - *ratio * row_echelon[i][k];
 }
 
-void Matrix::GaussElimination(bool inverse){
+void Matrix::GaussElimination(bool rectangular){
     double ratio = 0.0;
     int first_zero_occur;
     for (int i = 0; i < rows_; ++i) {
@@ -31,7 +31,7 @@ void Matrix::GaussElimination(bool inverse){
         } else
         {
             for (int j = 0; j < rows_; ++j) {
-                if (inverse && i != j)
+                if (rectangular && i != j)
                     elimination_processor(&ratio, *this, i, j, rows_, true);
                 else if (j > i)
                     elimination_processor(&ratio, *this, i, j, rows_, false);
