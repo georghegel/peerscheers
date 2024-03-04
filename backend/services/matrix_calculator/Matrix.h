@@ -1,7 +1,3 @@
-//
-// Created by Rachel Sanford on 2/18/24.
-//
-
 #ifndef C_MATRIX_H
 #define C_MATRIX_H
 
@@ -21,37 +17,11 @@ public:
 //    Matrix(Matrix&& other) noexcept ;
     ~Matrix();
 
-    bool EqMatrix(const Matrix& other);
-//    bool IsOrthogonal(const Matrix& other);
-//    bool IsSymmetric(const Matrix& other);
-
-    void SumMatrix(const Matrix& other);
-    void SubMatrix(const Matrix& other);
-    void MulNumber(double num);
-    void MulMatrix(const Matrix& other);
-
-    Matrix Transpose();
-//    Matrix Diagonal(const int num);
-//    Matrix Identity();
-//    double Trace();
-
-    Matrix CalcComplements();
-    double Determinant();
-    Matrix InverseMatrix();
-
-    void GaussElimination(bool inverse);
-    void SwapRows(int row_1, int row_2);
-    void CreateAugmentMatrix(const Matrix& augment_matrix);
-    void InverseAugmented(const Matrix& augment_matrix);
-    void CopyResult(Matrix& result);
-
-//    std::vector<Matrix> SVD();
-//    int Rank();
-
-    void Print();
-    int GetCols() const;
-    int GetRows() const;
-    bool CheckRowsCols() const;
+    /************************************************/
+    /*                                              */
+    /*              OVERLOADED OPERATORS            */
+    /*                                              */
+    /************************************************/
 
     std::vector<double>& operator [](int i) {
         return matrix_[i];
@@ -63,14 +33,31 @@ public:
         return matrix_[i][j];
     }
 
+    Matrix operator + (Matrix const& other) {
+        if (rows_ != other.GetRows() || cols_ != other.GetCols())
+            throw std::invalid_argument("Rows and cols of the matrices don't match!");
+        *this += other;
+        return *this;
+    }
+
+//    Matrix operator - (Matrix t, Matrix const& other) {
+//        if (t.GetRows() != other.GetRows() || t.GetCols() != other.GetCols())
+//            throw std::invalid_argument("Rows and cols of the matrices don't match!");
+//        t -= other;
+//        return t;
+//    }
+//
+//    Matrix operator * (Matrix t, Matrix const& other) {
+//        if (t.GetCols() != other.GetRows())
+//            throw std::invalid_argument("Columns of the first matrix doesn't equal to rows of the second matrix!\n");
+//        t *= other;
+//        return t;
+//    }
+
     Matrix& operator = (const Matrix& other){
-        if (rows_ != other.rows_ || cols_ != other.cols_)
+        if (rows_ != other.rows_ || cols_ != other.cols_) // Maybe it's not necessary because of the nature = operator
             throw std::invalid_argument("Rows or cols of the matrices don't match!\n");
-        for (int i = 0; i < other.GetRows(); ++i) {
-            for (int j = 0; j < other.GetCols(); ++j) {
-                matrix_[i][j] = other.matrix_[i][j];
-            }
-        }
+        this->DeepCopy(other);
         return *this;
     }
 
@@ -104,6 +91,46 @@ public:
         this->MulNumber(num);
         return *this;
     }
+
+    /************************************************/
+    /*                                              */
+    /*               MEMBER FUNCTIONS               */
+    /*                                              */
+    /************************************************/
+
+
+    bool EqMatrix(const Matrix& other);
+//    bool IsOrthogonal(const Matrix& other);
+//    bool IsSymmetric(const Matrix& other);
+
+    void SumMatrix(const Matrix& other);
+    void SubMatrix(const Matrix& other);
+    void MulNumber(double num);
+    void MulMatrix(const Matrix& other);
+
+    Matrix Transpose();
+//    Matrix Diagonal(const int num);
+//    Matrix Identity();
+//    double Trace();
+
+    Matrix CalcComplements();
+    double Determinant();
+    Matrix InverseMatrix();
+
+    void GaussElimination(bool inverse);
+    void SwapRows(int row_1, int row_2);
+    void CreateAugmentMatrix(const Matrix& augment_matrix);
+    void InverseAugmented(const Matrix& augment_matrix);
+    void CopyResult(Matrix& result);
+
+//    std::vector<Matrix> SVD();
+//    int Rank();
+
+    void DeepCopy(const Matrix& other);
+    bool CheckRowsCols() const;
+    int GetCols() const;
+    int GetRows() const;
+    void Print();
 
 };
 
