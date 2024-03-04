@@ -1,7 +1,7 @@
 #include "Matrix.h"
 
-Matrix Matrix::Transpose() {
-    if (!this->CheckRowsCols()) {
+Matrix Matrix::Transpose() const {
+    if (this->CheckRowsCols()) {
         throw std::invalid_argument("Rows (cols) are invalid. They must be positive integers >= 0.\n");
     }
     Matrix result(cols_, rows_);

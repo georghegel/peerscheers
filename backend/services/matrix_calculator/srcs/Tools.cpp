@@ -31,3 +31,19 @@ void Matrix::DeepCopy(const Matrix& other){
         }
     }
 }
+
+//bool Matrix::IsOrthogonal(const Matrix& other) {
+//    Matrix copy = other;
+//    Matrix copy2 = *this;
+////    this->MulMatrix(copy.Transpose());
+//    if (copy2.MulMatrix(copy.Transpose()) == copy.MulMatrix(copy2.Transpose())) {
+//
+//    }
+//}
+
+bool Matrix::IsSymmetric(const Matrix& other) {
+    if (other.Transpose() == *this) {
+        return true;
+    }
+    return false;
+}
