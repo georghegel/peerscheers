@@ -101,7 +101,8 @@ public:
 
     bool EqMatrix(const Matrix& other);
 //    bool IsOrthogonal(const Matrix& other);
-    bool IsSymmetric(const Matrix& other);
+    bool IsSymmetric();
+    bool IsSkewSymmetric();
 
     void SumMatrix(const Matrix& other);
     void SubMatrix(const Matrix& other);
