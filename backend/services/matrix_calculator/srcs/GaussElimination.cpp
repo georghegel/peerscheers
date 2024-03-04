@@ -1,7 +1,3 @@
-//
-// Created by Rachel Sanford on 2/23/24.
-//
-
 #include "Matrix.h"
 
 int find_non_zero_diagonal_element(int start, Matrix& matrix){

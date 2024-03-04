@@ -1,7 +1,3 @@
-//
-// Created by Rachel Sanford on 2/23/24.
-//
-
 #include "Matrix.h"
 
 void Matrix::CopyResult(Matrix& result) {
