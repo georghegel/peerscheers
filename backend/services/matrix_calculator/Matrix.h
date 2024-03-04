@@ -101,30 +101,30 @@ public:
 
     bool EqMatrix(const Matrix& other);
 //    bool IsOrthogonal(const Matrix& other);
-//    bool IsSymmetric(const Matrix& other);
+    bool IsSymmetric(const Matrix& other);
 
     void SumMatrix(const Matrix& other);
     void SubMatrix(const Matrix& other);
     void MulNumber(double num);
     void MulMatrix(const Matrix& other);
 
-    Matrix Transpose();
-//    Matrix Diagonal(const int num);
-//    Matrix Identity();
-//    double Trace();
+    Matrix Transpose() const;
+    void Diagonal(int num);
+    void Identity();
+    double Trace();
 
     Matrix CalcComplements();
     double Determinant();
     Matrix InverseMatrix();
 
-    void GaussElimination(bool inverse);
+//    std::vector<Matrix> SVD();
+    int Rank();
+
+    void CopyResult(Matrix& result);
+    void GaussElimination(bool rectangular);
     void SwapRows(int row_1, int row_2);
     void CreateAugmentMatrix(const Matrix& augment_matrix);
     void InverseAugmented(const Matrix& augment_matrix);
-    void CopyResult(Matrix& result);
-
-//    std::vector<Matrix> SVD();
-//    int Rank();
 
     void DeepCopy(const Matrix& other);
     bool CheckRowsCols() const;
