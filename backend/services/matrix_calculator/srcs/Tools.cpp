@@ -1,14 +1,9 @@
-//
-// Created by Rachel Sanford on 2/23/24.
-//
-
 #include "Matrix.h"
 
 void Matrix::Print() {
     for (int i = 0; i < rows_; ++i) {
-        for (int j = 0; j < cols_; ++j) {
+        for (int j = 0; j < cols_; ++j)
             std::cout << matrix_[i][j] << '\t';
-        }
         std::cout << '\n';
     }
 }
@@ -23,4 +18,16 @@ int Matrix::GetRows() const {
 
 bool Matrix::CheckRowsCols() const {
     return (rows_ < 0 || cols_ < 0);
+}
+
+void Matrix::DeepCopy(const Matrix& other){
+    rows_ = other.rows_;
+    cols_ = other.cols_;
+    this->matrix_.resize(rows_, std::vector<double>(cols_, 0.0));
+
+    for (int i = 0; i < rows_; ++i) {
+        for (int j = 0; j < cols_; ++j) {
+            matrix_[i][j] = other.matrix_[i][j];
+        }
+    }
 }

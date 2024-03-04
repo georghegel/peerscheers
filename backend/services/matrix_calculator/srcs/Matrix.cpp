@@ -1,7 +1,3 @@
-//
-// Created by Rachel Sanford on 2/18/24.
-//
-
 #include "Matrix.h"
 
 Matrix::Matrix() {
@@ -19,16 +15,10 @@ Matrix::Matrix(int rows, int cols) {
 }
 
 Matrix::Matrix(const Matrix& other) : rows_(), cols_() {
-    if (!this->CheckRowsCols()) {
+    if (this->CheckRowsCols()) {
         throw std::invalid_argument("Rows (cols) are invalid. They must be positive integers >= 0.\n");
     }
-    rows_ = other.rows_;
-    cols_ = other.cols_;
-    matrix_.resize(rows_, std::vector<double>(cols_, 0.0));
-    for (int i = 0; i < rows_; ++i) {
-        for (int j = 0; j < cols_; ++j)
-            matrix_[i][j] = other.matrix_[i][j];
-    }
+    this->DeepCopy(other);
 }
 
 //Matrix::Matrix(Matrix&& other) {
@@ -43,25 +33,28 @@ Matrix::~Matrix() {
 }
 
 int main(){
-    int r = 10;
-    int c = 10;
+    int r = 3;
+    int c = 3;
     Matrix m(r, c);
     for (int i = 0; i < r; ++i) {
         for (int j = 0; j < c; ++j) {
             m[i][j] = rand() % 10;
         }
     }
-//    Matrix m2(3, 3);
-//    for (int i = 0; i < 3; ++i) {
-//        for (int j = 0; j < 3; ++j)
-//            m2[i][j] = rand() % 10;
-//    }
+
+    Matrix m2(r, c);
+    for (int i = 0; i < r; ++i) {
+        for (int j = 0; j < c; ++j)
+            m2[i][j] = rand() % 10;
+    }
 
     m.Print();
-    m.InverseMatrix();
-    Matrix comp = m.CalcComplements();
-//    std::cout << m.Determinant() << '\n';
-//    m.Print();
+    m.GaussElimination(false);
+    m.Print();
+//    m2.Print();
+
+    Matrix m3(r, c);
+
 
     return 0;
 }

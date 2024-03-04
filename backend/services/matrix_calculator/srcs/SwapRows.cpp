@@ -1,7 +1,3 @@
-//
-// Created by Rachel Sanford on 2/23/24.
-//
-
 #include "Matrix.h"
 
 void row_copy(std::vector<double>& term1, const std::vector<double>& term2, int columns) {
