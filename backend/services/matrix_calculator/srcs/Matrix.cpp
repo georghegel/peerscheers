@@ -11,15 +11,17 @@ Matrix::Matrix() {
 }
 
 Matrix::Matrix(int rows, int cols) {
-    if (rows < 1 || cols < 1)
-        throw std::invalid_argument("Rows and Cols should be positive integers\n");
+    if (rows < 0 || cols < 0)
+        throw std::invalid_argument("Rows (cols) must be positive integers >= 0.\n");
     rows_ = rows;
     cols_ = cols;
-
     matrix_.resize(rows_, std::vector<double>(cols_, 0.0));
 }
 
 Matrix::Matrix(const Matrix& other) : rows_(), cols_() {
+    if (!this->CheckRowsCols()) {
+        throw std::invalid_argument("Rows (cols) are invalid. They must be positive integers >= 0.\n");
+    }
     rows_ = other.rows_;
     cols_ = other.cols_;
     matrix_.resize(rows_, std::vector<double>(cols_, 0.0));
