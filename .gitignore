@@ -2,3 +2,8 @@ CMakeLists.txt
 .DS_Store
 /cmake-build-debug/
 /.idea/
+
+/backend/services/.DS_Store
+/backend/services/matrix_calculator/.DS_Store
+
+/backend/services/image_recognizer/.DS_Store
