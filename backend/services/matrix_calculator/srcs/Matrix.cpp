@@ -21,7 +21,7 @@ Matrix::Matrix(const Matrix& other) : rows_(), cols_() {
     this->DeepCopy(other);
 }
 
-//Matrix::Matrix(Matrix&& other) {
+//Matrix::Matrix(Matrix&& other) noexcept {
 //
 //}
 
@@ -47,13 +47,14 @@ int main(){
         for (int j = 0; j < c; ++j)
             m2[i][j] = rand() % 10;
     }
-
-    m.Print();
-    m.GaussElimination(false);
-    m.Print();
+//
+//    m.Print();
+//    m.GaussElimination(false);
+//    m.Print();
 //    m2.Print();
 
     Matrix m3(r, c);
+    m3 = m * m2;
 
 
     return 0;

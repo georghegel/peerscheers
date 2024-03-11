@@ -27,7 +27,11 @@ public:
         return matrix_[i];
     }
 
-    double& operator ()(int i, int j){
+    const std::vector<double>& operator [](int i) const {
+        return matrix_[i];
+    }
+
+    const double& operator ()(int i, int j){
         if ((i < 1 || i > rows_) || (j < 1 || j > cols_))
             throw std::invalid_argument("Out of bound!\n");
         return matrix_[i][j];
@@ -40,19 +44,19 @@ public:
         return *this;
     }
 
-//    Matrix operator - (Matrix t, Matrix const& other) {
-//        if (t.GetRows() != other.GetRows() || t.GetCols() != other.GetCols())
-//            throw std::invalid_argument("Rows and cols of the matrices don't match!");
-//        t -= other;
-//        return t;
-//    }
-//
-//    Matrix operator * (Matrix t, Matrix const& other) {
-//        if (t.GetCols() != other.GetRows())
-//            throw std::invalid_argument("Columns of the first matrix doesn't equal to rows of the second matrix!\n");
-//        t *= other;
-//        return t;
-//    }
+    Matrix operator - (Matrix const& other) {
+        if (rows_ != other.GetRows() || cols_ != other.GetCols())
+            throw std::invalid_argument("Rows and cols of the matrices don't match!");
+        *this -= other;
+        return *this;
+    }
+
+    Matrix operator * (Matrix const& other) {
+        if (cols_ != other.GetRows())
+            throw std::invalid_argument("Columns of the first matrix doesn't equal to rows of the second matrix!\n");
+        *this *= other;
+        return *this;
+    }
 
     Matrix& operator = (const Matrix& other){
         if (rows_ != other.rows_ || cols_ != other.cols_) // Maybe it's not necessary because of the nature = operator
@@ -98,10 +102,9 @@ public:
     /*                                              */
     /************************************************/
 
-
     bool EqMatrix(const Matrix& other);
 //    bool IsOrthogonal(const Matrix& other);
-    bool IsSymmetric();
+    [[nodiscard]] bool IsSymmetric() const;
     bool IsSkewSymmetric();
 
     void SumMatrix(const Matrix& other);
@@ -109,7 +112,7 @@ public:
     void MulNumber(double num);
     void MulMatrix(const Matrix& other);
 
-    Matrix Transpose() const;
+    [[nodiscard]] Matrix Transpose() const;
     void Diagonal(int num);
     void Identity();
     double Trace();
@@ -128,9 +131,9 @@ public:
     void InverseAugmented(const Matrix& augment_matrix);
 
     void DeepCopy(const Matrix& other);
-    bool CheckRowsCols() const;
-    int GetCols() const;
-    int GetRows() const;
+    [[nodiscard]] bool CheckRowsCols() const;
+    [[nodiscard]] int GetCols() const;
+    [[nodiscard]] int GetRows() const;
     void Print();
 
 };

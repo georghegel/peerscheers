@@ -41,7 +41,7 @@ void Matrix::DeepCopy(const Matrix& other){
 //    }
 //}
 
-bool Matrix::IsSymmetric() {
+bool Matrix::IsSymmetric() const {
     if (this->Transpose() == *this) {
         return true;
     }
