@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vilya</title>
+    <link rel="icon" href="image/image.svg">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+<header>
+    
+    <ul id="tab" class="header-nav">
+        <li class="tab_item is_active icon"> vilya27 <br> georghel</li>
+        <li class="tab_item">Image Recognizer</li>
+        <li class="tab_item">Calculator</li>
+        <li class="tab_item">Compressed picture</li>
+    </ul>
+    
+</header>
+<main>
+    
+    <div id="one" class="content_item is_active">
+        <div>Привет! Это georghel и vilya27, и мы сделали pet-project показывающий наши способности в программировании.</div>
+    </div>
+
+    <div id="two" class="content_item">
+
+        <p class="answer">ITS A CAT</p>
+        <label for="input_file" id="upload_zone">
+            <input type="file" accept="image/*" id="input_file" hidden>
+            <p class="upload_img">Перетащите файл или кликните сюда для загрузки изображения</p>
+        </label>
+    </div>
+
+    <div id="three" class="content_item">
+
+        <div class="net">
+            <div class="matrix_one">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="matrix_size">
+                    <div class="size_m"></div>
+                    <div class="size_n"></div>
+                </div>
+            </div>
+            <div class="matrix_two"></div>
+
+            <div class="calculate">
+                <div class="col1">
+                    <div class="operations1">Transpose</div>
+                    <div class="operations2">Sum</div>
+                    <div class="operations3">Sub</div>
+                    <div class="operations4">Multiply</div>
+                    <div class="operations5">Inverse</div>
+                </div>
+                <div class="col2">
+                    <div class="operations1">Trace</div>
+                    <div class="operations2">Determinant</div>
+                    <div class="operations3">Adjugate</div>
+                    <div class="operations4">SVD</div>
+                    <div class="operations5">Guassian</div>
+                </div>
+            </div>
+            <div class="matrix_answer"></div>
+        </div>
+    </div>
+
+    <div class="four"></div>
+
+</main>
+<footer></footer>
+<script src="js/script.js"></script>
+</body>
+</html>

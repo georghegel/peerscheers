@@ -1,0 +1,208 @@
+a {
+  text-decoration: none;
+  color: #9C9C9C;
+}
+
+body {
+  background-color: #2A2A2A;
+  font-family: "Nunito Sans", sans-serif;
+  color: #9C9C9C;
+}
+
+.header-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 30px 0 30px 0;
+  cursor: pointer;
+}
+.header-nav li:hover {
+  color: #525266;
+  font-weight: bold;
+}
+
+.icon {
+  font-family: "Playfair Display", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.content_item {
+  display: none;
+}
+
+.content_item.is_active {
+  display: block;
+}
+
+.tab_item.is_active {
+  color: #525266;
+}
+
+main .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+main #one div {
+  margin-left: 50px;
+  margin-top: 80px;
+  font-size: 48px;
+}
+main #one a:hover {
+  color: #525266;
+  font-size: 20px;
+}
+main #two a:hover {
+  color: #525266;
+  font-size: 20px;
+}
+main #two #upload_zone {
+  display: block;
+  max-width: 800px;
+  max-height: 600px;
+  margin: auto auto;
+  padding: 1% 1%;
+  border: 1px dashed #9C9C9C;
+  color: #9C9C9C;
+}
+main #two #upload_zone p {
+  text-align: center;
+  line-height: 600px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+main #two .answer {
+  text-transform: uppercase;
+  font-size: 38px;
+  background: linear-gradient(45deg, #d1e0de 30%, #eef4ce 15%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: none;
+  margin: 0 auto 1% auto;
+}
+main #three a:hover {
+  color: #525266;
+  font-size: 20px;
+}
+main #three .net {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+}
+main #three .net .matrix_one {
+  padding: 10px;
+  border: 2px solid red;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+}
+main #three .net .matrix_one .cell {
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+main #three .net .matrix_one .matrix_size {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+main #three .net .matrix_one .matrix_size .size_m {
+  padding: 10px;
+  border: 1px solid white;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+main #three .net .matrix_one .matrix_size .size_n {
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+main #three .net .matrix_two {
+  border: 2px solid red;
+  padding: 10px;
+}
+main #three .net .calculate {
+  border: 2px solid red;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+main #three .net .calculate .col1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+main #three .net .calculate .col1 .operations1 {
+  padding: 20px;
+  border: 2px solid grey;
+}
+main #three .net .calculate .col1 .operations2 {
+  padding: 20px;
+  border: 2px solid grey;
+}
+main #three .net .calculate .col1 .operations3 {
+  padding: 20px;
+  border: 2px solid grey;
+}
+main #three .net .calculate .col1 .operations4 {
+  padding: 20px;
+  border: 2px solid grey;
+}
+main #three .net .calculate .col1 .operations5 {
+  padding: 20px;
+  border: 2px solid grey;
+}
+main #three .net .calculate .col2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+main #three .net .calculate .col2 .operations1 {
+  padding: 20px;
+  border: 2px solid grey;
+}
+main #three .net .calculate .col2 .operations2 {
+  padding: 20px;
+  border: 2px solid grey;
+}
+main #three .net .calculate .col2 .operations3 {
+  padding: 20px;
+  border: 2px solid grey;
+}
+main #three .net .calculate .col2 .operations4 {
+  padding: 20px;
+  border: 2px solid grey;
+}
+main #three .net .calculate .col2 .operations5 {
+  padding: 20px;
+  border: 2px solid grey;
+}
+main #three .net .matrix_answer {
+  border: 2px solid red;
+  padding: 10px;
+}
+
+/*# sourceMappingURL=main.css.map */

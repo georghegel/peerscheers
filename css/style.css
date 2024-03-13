@@ -1,0 +1,17 @@
+body {
+    background-color: #2A2A2A;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-around;
+    color: ;
+}
+
+.icon {
+    color: #525266;
+    font-family: "Playfair Display", sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+}

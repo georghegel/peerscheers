@@ -1,0 +1,211 @@
+$background: #2A2A2A;
+$text-color: #9C9C9C;
+$nav-color: #525266;
+a {
+    text-decoration: none;
+    color: $text-color;
+}
+
+body {
+    background-color: #2A2A2A;
+    font-family: "Nunito Sans", sans-serif;
+    color: $text-color;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 30px 0 30px 0;
+    cursor: pointer;
+    li:hover {
+        color: $nav-color;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 1048px) {
+    
+}
+
+.icon {
+    font-family: "Playfair Display", sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.content_item {
+    display: none;
+}
+
+.content_item.is_active {
+    display: block;
+}
+    
+.tab_item.is_active {
+    color: $nav-color;
+}
+
+main {
+    .nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        // padding-bottom: 10px;
+    }
+    #one {
+        // display: block;
+        // display: none;
+        div {
+            margin-left: 50px;
+            margin-top: 80px;
+            font-size: 48px;
+        }
+        a:hover {
+            color: $nav-color;
+            font-size: 20px;
+        }
+        
+    }
+    #two {
+        a:hover {
+            color: $nav-color;
+            font-size: 20px;
+        }
+        #upload_zone {
+            display: block;
+            // width: 600px; 
+            max-width: 800px; 
+            max-height: 600px;
+            // height: 300px;
+            margin: auto auto;
+            padding: 1% 1%;
+            border: 1px dashed #9C9C9C;
+            color: $text-color;
+            p {
+                text-align: center;
+                line-height: 600px;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+        }
+        .answer {
+            text-transform: uppercase;
+            font-size: 38px;
+            background: linear-gradient(45deg,  #d1e0de 30%, #eef4ce 15%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            // color: #0B2349;
+            display: none;
+            margin: 0 auto 1% auto;
+        }
+    }
+    #three {
+        // display: block;
+        // display: none;
+        a:hover {
+            color: $nav-color;
+            font-size: 20px;
+        }
+        .net{
+            display: grid;
+        grid-template-columns: auto auto ;
+        grid-template-rows: auto auto ;
+        
+        .matrix_one {
+            padding: 10px;
+            border: 2px solid red;
+            display: grid;
+            grid-template-columns: auto auto ;
+            grid-template-rows: auto auto ;
+            .cell {
+                padding: 10px;
+                border: 1px solid white;
+                border-radius: 5px;
+            }
+            .matrix_size {
+                display: flex;
+                justify-content: center;
+                // align-items: center;
+                .size_m {
+                    padding: 10px;
+                    border: 1px solid white;
+                    margin-right: 10px;
+                    border-radius: 5px;
+
+                }
+                .size_n {
+                    padding: 10px;
+                    border: 1px solid white;
+                    border-radius: 5px;
+                }
+            }
+        }
+        .matrix_two {
+            border: 2px solid red;
+            padding: 10px;
+            
+        }
+        .calculate {
+            border: 2px solid red;
+            padding: 10px;
+            display: flex;
+
+            .col1 {
+                display: flex;
+            flex-direction: column;
+            .operations1 {
+                padding: 20px;
+                border: 2px solid grey;
+            }
+            .operations2 {
+                padding: 20px;
+                border: 2px solid grey;
+            }
+            .operations3 {
+                padding: 20px;
+                border: 2px solid grey;
+            }
+            .operations4 {
+                padding: 20px;
+                border: 2px solid grey;
+            }
+            .operations5 {
+                padding: 20px;
+                border: 2px solid grey;
+            }
+            }
+            .col2{
+                display: flex;
+            flex-direction: column;
+            .operations1 {
+                padding: 20px;
+                border: 2px solid grey;
+            }
+            .operations2 {
+                padding: 20px;
+                border: 2px solid grey;
+            }
+            .operations3 {
+                padding: 20px;
+                border: 2px solid grey;
+            }
+            .operations4 {
+                padding: 20px;
+                border: 2px solid grey;
+            }
+            .operations5 {
+                padding: 20px;
+                border: 2px solid grey;
+            }
+            }
+            
+        }
+        .matrix_answer {
+            border: 2px solid red;
+            padding: 10px;
+
+        }
+    }
+    }
+}
