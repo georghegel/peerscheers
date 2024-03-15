@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>vilya</title>
-    <link rel="icon" href="image/image.svg">
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
@@ -15,14 +14,17 @@
 <body>
     
 <header>
-    
+    <div class="mobile">
+        <div class="mobile_icon"> vilya27 <br> georghel</div>
+        <img class="humburger_menu " src="img/hamb.svg" alt="humburge-icon">
+        <!-- <img class="humburger_menu " width="50" height="50" src="https://img.icons8.com/ios-filled/50/000000/menu--v6.png" alt="menu--v6"/> -->
+    </div>
     <ul id="tab" class="header-nav">
         <li class="tab_item is_active icon"> vilya27 <br> georghel</li>
         <li class="tab_item">Image Recognizer</li>
         <li class="tab_item">Calculator</li>
         <li class="tab_item">Compressed picture</li>
     </ul>
-    
 </header>
 <main>
     
@@ -40,41 +42,57 @@
     </div>
 
     <div id="three" class="content_item">
-
         <div class="net">
             <div class="matrix_one">
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="matrix_size">
-                    <div class="size_m"></div>
-                    <div class="size_n"></div>
+                <div class="matrix_one_container">
+                    <input type="number" name="matrix_one_cell" class="matrix_one_cell" inputmode="numeric" >
+                    <input type="number" name="matrix_one_cell" class="matrix_one_cell" inputmode="numeric" >
+                    <input type="number" name="matrix_one_cell" class="matrix_one_cell" inputmode="numeric" >
+                    <input type="number" name="matrix_one_cell" class="matrix_one_cell" inputmode="numeric" >
+                    <div class="matrix_one_size">
+                        <input type="number" name="matrix_one_m" class="matrix_one_m" placeholder="M" inputmode="numeric" value="2" >
+                        X
+                        <input type="number" name="matrix_one_n" class="matrix_one_n" placeholder="N" inputmode="numeric" value="2" >
+                    </div>
                 </div>
+                <div class="matrix_one_error">Ошибка! Размерность матрицы должна быть больше нуля</div>
             </div>
-            <div class="matrix_two"></div>
+            <div class="matrix_two">
+                <div class="matrix_two_container">
+                    <input type="number" name="matrix_two_cell" class="matrix_two_cell" inputmode="numeric" >
+                    <input type="number" name="matrix_two_cell" class="matrix_two_cell" inputmode="numeric" >
+                    <input type="number" name="matrix_two_cell" class="matrix_two_cell" inputmode="numeric" >
+                    <input type="number" name="matrix_two_cell" class="matrix_two_cell" inputmode="numeric" >
+                    <div class="matrix_two_size">
+                        <input type="number" name="matrix_two_m" class="matrix_two_m" placeholder="M" inputmode="numeric" value="2" >
+                        X
+                        <input type="number" name="matrix_two_n" class="matrix_two_n" placeholder="N" inputmode="numeric" value="2" >
+                    </div>
+                </div>
+                <div class="matrix_two_error">Ошибка! Размерность матрицы должна быть больше нуля</div>
+            </div>
 
             <div class="calculate">
                 <div class="col1">
-                    <div class="operations1">Transpose</div>
-                    <div class="operations2">Sum</div>
-                    <div class="operations3">Sub</div>
-                    <div class="operations4">Multiply</div>
-                    <div class="operations5">Inverse</div>
+                    <div class="operations">Transpose</div>
+                    <div class="operations">Sum</div>
+                    <div class="operations">Sub</div>
+                    <div class="operations">Multiply</div>
+                    <div class="operations">Inverse</div>
                 </div>
                 <div class="col2">
-                    <div class="operations1">Trace</div>
-                    <div class="operations2">Determinant</div>
-                    <div class="operations3">Adjugate</div>
-                    <div class="operations4">SVD</div>
-                    <div class="operations5">Guassian</div>
+                    <div class="operations">Trace</div>
+                    <div class="operations">Determinant</div>
+                    <div class="operations">Adjugate</div>
+                    <div class="operations">SVD</div>
+                    <div class="operations">Guassian</div>
                 </div>
             </div>
             <div class="matrix_answer"></div>
         </div>
     </div>
 
-    <div class="four"></div>
+    <div id="four"></div>
 
 </main>
 <footer></footer>
