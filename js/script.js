@@ -12,7 +12,7 @@ const setActiveClass = (element, index, className = 'is_active') => {
 const checkoutTabs = (item, index) => {
     item.addEventListener('click', () => {
         if (item.classList.contains('is_active')) return
-
+        // console.log(index)
         clearActiveClass(tabItems)
         clearActiveClass(contentItems)
         
@@ -45,6 +45,8 @@ const uploadImg = document.querySelector(".upload_img")
 
 
 uploadInput.addEventListener("change", uploadImage);
+uploadInput.addEventListener("click", initialize);
+
 
 function uploadImage() {
     let imgLink = URL.createObjectURL(uploadInput.files[0]);
@@ -216,3 +218,61 @@ matrix_two_n.addEventListener("change", function() {
     document.querySelector('.matrix_two_size').style.gridColumn = "1/" + grid_size;
    
 })
+
+
+
+
+const range_value = document.querySelector("#range_value");
+const input_range = document.querySelector("#input_range");
+range_value.textContent = input_range.value;
+input_range.addEventListener("input", (event) => {
+    range_value.textContent = event.target.value;
+});
+
+
+
+
+
+
+const dropImageZone = document.querySelector("#drop_zone")
+const InputZone = document.querySelector("#input_zone")
+// const uploadImg = document.querySelector(".upload_img")
+
+
+InputZone.addEventListener("change", inputImage);
+InputZone.addEventListener("click", initialize);
+
+function initialize()
+{
+    document.body.onfocus = checkIt;
+}
+    
+function checkIt()
+{
+    if(InputZone.value.length)  InputZone.value = ""
+    document.body.onfocus = null;
+}
+
+function inputImage() {
+
+    let imgLink = URL.createObjectURL(InputZone.files[0]);
+    drop_zone.style.backgroundSize = "contain";
+    drop_zone.style.backgroundImage = `url(${imgLink})`;
+    
+    document.querySelector('.input_zone_text').style.fontSize = "0";
+    // document.querySelector('.answer').style.display = 'table';
+}
+
+dropImageZone.addEventListener("dragover", function(e) {
+    e.preventDefault();
+    // dropImageZone.style.backgroundColor = "#9C9C9C";
+});
+
+dropImageZone.addEventListener("drop", function(e) {
+    e.preventDefault();
+    InputZone.files = e.dataTransfer.files;
+    // dropImageZone.style.backgroundColor = "#2A2A2A";
+    inputImage();
+});
+
+
